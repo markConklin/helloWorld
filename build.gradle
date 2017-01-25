@@ -41,7 +41,7 @@ jar {
 task buildDocker(type: Docker, dependsOn: build) {
     applicationName = jar.baseName
     tag = 'conklin/heloworld'
-    dockerfile = file('/src/main/docker/Dockerfile')
+    dockerfile = file('./Dockerfile')
     doFirst {
         copy {
             from jar
