@@ -11,9 +11,9 @@ env:
   - secure: 1HtUaOwV2Kko6CalrXQxOJmGdqsFOU+eCdxM2NEqjTZwCWHGnthYC5zbzJiHaysbvIAdFEzoDuPKaCzR701c4Mq5azVOf3DLUBVGoiHyv2Fv1TQFOCy5gx6kUv2ttNloJl9pYAXhD6QAxnSSFYvdI5BqMRxLzPrENPCueagthYi9K8vBtLnOgKMflc0T/QOsX+z3/2ny4PWF/eCKXhslff248xWbamv1GpCFrkbxlpeNMM5w5ua1oL3CVPy1tJXGCInkOjdsFaF6h1tAr+IEFYWXkQlMwnvK8mAUiTbCCO8AcJNZLBCagJLDdCE8lE/ESZP25yqnf3FLCpyJAvtAY0VXr6RKrJCFtco7uHrw8rJkWP42thJAOyPN304Jf/Ez0WmwYSyTr+GfyIUHXJXCJU9np7Hiesg07l2pvcFFHFnIT3BQpiMbwz+Q7eni3scbj2erUNZA51r6pZudjzcOb7VP8+vhgvqm31cXgdvPtak6YJ2baajCRP2d7nf4MmaKUrvsdR6d4s+puVYLJ09jOatOnaMW37tG9QUNfouLJQ6NSslzRZltZUIF+NLYShD7m3/VxjBiefVJ/fd8m1mpdqMTl+9NLkKNbL6ffQJXxlFVdfubo2NgMiBi7F3kojKOVchoF57DjavZ8iq9Ia5gj11R3siYajawntnnhNg6A54=
 
 before_install:
-  -
   - "./gradlew buildDocker"
 
 
 after_success:
   - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+  - docker push conklin/helloWorld
